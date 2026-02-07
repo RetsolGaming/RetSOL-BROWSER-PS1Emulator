@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RetSOL PSX v5.0</title>
+    <title>RetSOL PSX v5.1</title>
     <style>
         body { background: #050505; color: #ff3e81; font-family: 'Courier New', monospace; text-align: center; margin: 0; overflow: hidden; }
         #game-container { width: 100vw; height: 75vh; background: #000; border-bottom: 2px solid #ff3e81; box-shadow: 0 0 20px #ff3e81; position: relative; }
-        iframe { width: 100%; height: 100%; border: none; }
+        
+        /* This makes the emulator frame "clickable" even on handhelds */
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            pointer-events: auto; 
+        }
+
         .menu { display: grid; grid-template-columns: 1fr; gap: 10px; padding: 15px; background: #000; }
         button { padding: 15px; border: 2px solid #00e0ff; color: #00e0ff; background: rgba(0,0,0,0.8); font-weight: bold; text-transform: uppercase; cursor: pointer; box-shadow: 0 0 10px #00e0ff; }
         #status { font-size: 10px; color: #ff00ff; padding: 5px; background: #000; letter-spacing: 1px; }
@@ -16,15 +24,22 @@
 <body>
 
     <div id="game-container">
-        <iframe id="emu-frame" src="https://lrusso.github.io/PlayStation/PlayStation.htm" allow="gamepad"></iframe>
+        <iframe id="emu-frame" src="https://lrusso.github.io/PlayStation/PlayStation.htm" allow="gamepad; autoplay"></iframe>
     </div>
 
-    <div id="status">RETSOL PSX v5.0 // SYSTEM SECURE</div>
+    <div id="status">RETSOL PSX v5.1 // SYSTEM SECURE</div>
 
     <div class="menu">
         <button onclick="location.href='https://retsolgaming.github.io/RetSOL-Hub/'">🏠 RETURN TO HUB</button>
-        <button style="border-color: #ff3e81; color: #ff3e81; box-shadow: 0 0 10px #ff3e81; margin-top: 5px;" onclick="location.reload()">🔄 REBOOT SYSTEM</button>
+        <button style="border-color: #ff3e81; color: #ff3e81; box-shadow: 0 0 10px #ff3e81;" onclick="location.reload()">🔄 REBOOT ENGINE</button>
     </div>
 
+    <script>
+        // Emergency touch-fix: If the iframe is acting "dead", 
+        // this helps the browser focus on it.
+        document.getElementById('game-container').onclick = function() {
+            document.getElementById('emu-frame').focus();
+        };
+    </script>
 </body>
 </html>
