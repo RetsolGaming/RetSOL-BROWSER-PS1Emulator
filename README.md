@@ -1,24 +1,52 @@
-# 💿 RetSOL-BROWSER-PS1Emulator
-**The Cinematic Retro Experience for Play Solana (PSG1)**
+# 💿 RetSOL PSX: Cloud-Direct Edition
 
-RetSOL PS1 turns your PSG1 into a 32-bit powerhouse. Experience the birth of 3D gaming with a UI that screams 80s Cyberpunk.
+**High-Performance PlayStation 1 Emulation for Play Solana (PSG1).**
 
----
-
-## ⚡ Hacko0r-Man Features
-* **CD-ROM Simulation:** Supports `.bin`, `.cue`, and `.iso` formats.
-* **Deep Save Integration:** Manual save states that write directly to your SD card.
-* **Miami Night Theme:** Hot pink and deep purple UI for that true retro-tech feel.
-* **PSG1 Gamepad API:** Pre-mapped for the PSG1's physical layout.
+RetSOL PSX v5.5 is a specialized web-emulator built to bypass the "Greyed Out" file restrictions on handheld browsers. By linking directly to your hosted `.bin` or `.iso` files, this engine injects the game data directly into the system RAM, bypassing the need for a local file picker.
 
 ---
 
-## 🚀 Quick Start
-1.  **Link Folder:** Click the "SD SAVES" button first to set your save destination.
-2.  **Load Game:** Choose your game file. Note: If you have a `.cue` file, select both the `.bin` and `.cue` together!
-3.  **Vibe:** Toggle the Hub link to switch back to GBA or N64 instantly.
+## 🚀 Key Features
+
+* **🛰️ Direct-Link Injection**: Loads games via official GitHub Pages URLs to avoid CORS and "Network Error" blocks.
+* **🎮 Handheld Optimized**: Pre-mapped controls for the PSG1 (Square, Cross, Triangle, Circle).
+* **📺 Retro Aesthetic**: Neon-pink "System Secure" UI designed for high-contrast visibility on mobile screens.
+* **🏠 Hub-Ready**: Built-in navigation to return to the RetSOL Gaming Hub.
 
 ---
 
-## 🔒 Privacy & Security
-Pure browser-based emulation. We follow the RetSOL "Zero-Knowledge" protocol: we don't host games, we don't see your saves, and we don't track your play.
+## 🛠️ Installation & Setup
+
+Because PS1 files are significantly larger than GBA files, follow these steps carefully:
+
+1.  **File Management**: Upload your `.bin`, `.iso`, or `.exe` file to your repository. 
+    * *Note: GitHub has a 100MB limit for standard uploads. For larger games, use Git LFS or a smaller "Compressed" bin.*
+2.  **Deployment**: 
+    * Ensure your game file is on the **main** branch.
+    * Wait for the GitHub Actions deployment (the green checkmark).
+3.  **Booting**: Open the app on your PSG1 and tap the **💿 LOAD PSX DISC** button.
+
+---
+
+## 🎮 Controls (PSG1 Mapping)
+
+| PS1 Button | Keyboard Map |
+| :--- | :--- |
+| **D-Pad** | Arrow Keys |
+| **Triangle / Circle** | D / X |
+| **Cross / Square** | Z / S |
+| **L1 / R1** | W / R |
+| **L2 / R2** | E / T |
+| **Select / Start** | C / V |
+
+---
+
+## ⚠️ Troubleshooting
+
+* **Black Screen/Loading**: PS1 games take longer to "Fetch" than GBA games due to size. Give the status bar at least 30-60 seconds to process the bytes.
+* **"Network Error"**: This happens if the GitHub Pages deployment isn't finished. Refresh the page and try again after 2 minutes.
+* **Double-Tap**: On the PSG1, you may need to tap the screen once to "Focus" the controls before the buttons respond.
+
+---
+
+**Developed by RetsolGaming for the Play Solana handheld community.**
