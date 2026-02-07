@@ -8,30 +8,25 @@
         body { background: #050505; color: #ff3e81; font-family: 'Courier New', monospace; text-align: center; margin: 0; overflow: hidden; }
         #game-container { width: 100vw; height: 70vh; background: black; box-shadow: 0 0 30px #ff3e81; }
         .menu { display: grid; grid-template-columns: 1fr; gap: 12px; padding: 20px; }
-        button { padding: 18px; border: 2px solid; font-weight: bold; background: rgba(0,0,0,0.6); color: inherit; text-transform: uppercase; font-size: 11px; }
+        button { padding: 18px; border: 2px solid; font-weight: bold; background: rgba(0,0,0,0.6); color: inherit; text-transform: uppercase; font-size: 11px; cursor: pointer; }
         .btn-hub { border-color: #00e0ff; color: #00e0ff; box-shadow: 0 0 15px #00e0ff; }
         #status { font-size: 10px; color: #ff00ff; margin-top: 10px; }
     </style>
 </head>
 <body>
-
     <div id="game-container">
         <div id="emulator"></div>
     </div>
-
     <div id="status">RETSOL PSX SYSTEM ACTIVE</div>
-
     <div class="menu">
         <button class="btn-hub" onclick="location.href='https://retsolgaming.github.io/RetSOL-Hub/'">🏠 RETURN TO HUB</button>
     </div>
-
     <script>
         EJS_player = '#emulator';
         EJS_core = 'psx';
-        EJS_gameUrl = ''; // Left empty so you can select your own file
         EJS_pathtodata = 'https://cdn.emulatorjs.org/latest/data/';
+        EJS_startOnLoaded = true;
     </script>
     <script src="https://cdn.emulatorjs.org/latest/data/loader.js"></script>
-
 </body>
 </html>
