@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RetSOL-BROWSER-PS1Emulator</title>
+    <title>RetSOL PSX v3.0</title>
     <style>
         body { 
             background-color: #050505; 
             background-image: linear-gradient(to bottom, #050505, #1a0033);
-            color: #00ffa3; 
-            font-family: 'Courier New', Courier, monospace; 
+            color: #ff3e81; 
+            font-family: 'Courier New', monospace; 
             text-align: center; 
             margin: 0; padding: 0;
             overflow: hidden; 
         }
 
-        /* Matches the GBA/N64 look */
         #screen-container {
             position: relative;
             width: 100vw;
@@ -29,7 +28,6 @@
             width: 100%; 
             height: 100%; 
             border: none;
-            image-rendering: pixelated;
         }
 
         .menu { 
@@ -42,20 +40,16 @@
         button { 
             padding: 18px; 
             border: 2px solid;
-            border-radius: 0px; 
             font-weight: bold; 
             cursor: pointer; 
             font-size: 12px;
             text-transform: uppercase;
             background: rgba(0, 0, 0, 0.6);
-            transition: 0.1s;
+            color: inherit;
         }
 
-        /* Neon Pink theme for PS1 */
-        .btn-main { color: #ff3e81; border-color: #ff3e81; grid-column: span 2; box-shadow: 0 0 15px #ff3e81; }
-        .btn-hub  { color: #00e0ff; border-color: #00e0ff; grid-column: span 2; box-shadow: 0 0 15px #00e0ff; }
-
-        button:active { transform: scale(0.98); background: #fff; color: #000; }
+        .btn-main { border-color: #ff3e81; grid-column: span 2; box-shadow: 0 0 15px #ff3e81; }
+        .btn-hub  { border-color: #00e0ff; grid-column: span 2; box-shadow: 0 0 15px #00e0ff; color: #00e0ff; }
 
         #status { 
             font-size: 11px; 
@@ -72,17 +66,16 @@
         <iframe id="emu-frame" src="https://emuweb.app/ps1"></iframe>
     </div>
     
-    <div id="status">RETSOL PS1 SYSTEM... LOAD .BIN/.CUE</div>
+    <div id="status">RETSOL PSX SYSTEM ACTIVE</div>
 
     <div class="menu">
-        <button class="btn-main" onclick="vibrate(); alert('Click the EmuWeb menu to load your local PS1 files!')">📂 LOAD PS1 DISCS</button>
-        <button class="btn-hub" onclick="vibrate(); location.href='https://yourusername.github.io/RetSOL-Hub/'">🏠 RETURN TO HUB</button>
+        <button class="btn-main" onclick="vibrate(); alert('Tap the screen to open the PS1 internal menu and load your .bin/.cue files!')">📂 HOW TO LOAD DISCS</button>
+        <button class="btn-hub" onclick="vibrate(); location.href='https://RetsolGaming.github.io/RetSOL-Hub/'">🏠 RETURN TO HUB</button>
     </div>
 
     <script>
         function vibrate() { if (navigator.vibrate) navigator.vibrate(40); }
         
-        // Listen for controller connection to update status
         window.addEventListener("gamepadconnected", () => {
             document.getElementById('status').innerText = "PSG1 CONTROLLER DETECTED";
             vibrate();
