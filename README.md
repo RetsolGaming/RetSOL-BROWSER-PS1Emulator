@@ -1,52 +1,33 @@
-# 💿 RetSOL PSX: Cloud-Direct Edition
+# 💿 RetSOL PSX v5.1 - BETA
 
-**High-Performance PlayStation 1 Emulation for Play Solana (PSG1).**
+The high-performance PlayStation 1 (PSX) portal for the Play Solana (PSG1). This emulator uses a specialized iframe-injection method to bypass handheld browser security blocks, allowing for full hardware-accelerated 3D rendering.
 
-RetSOL PSX v5.5 is a specialized web-emulator built to bypass the "Greyed Out" file restrictions on handheld browsers. By linking directly to your hosted `.bin` or `.iso` files, this engine injects the game data directly into the system RAM, bypassing the need for a local file picker.
-
----
-
-## 🚀 Key Features
-
-* **🛰️ Direct-Link Injection**: Loads games via official GitHub Pages URLs to avoid CORS and "Network Error" blocks.
-* **🎮 Handheld Optimized**: Pre-mapped controls for the PSG1 (Square, Cross, Triangle, Circle).
-* **📺 Retro Aesthetic**: Neon-pink "System Secure" UI designed for high-contrast visibility on mobile screens.
-* **🏠 Hub-Ready**: Built-in navigation to return to the RetSOL Gaming Hub.
+## 🚀 Features
+* **Zero-Config Engine**: Powered by the stable `lrusso` core with built-in BIOS.
+* **Handheld Focus**: Includes an emergency touch-fix script to ensure the PSG1 browser maintains focus on the game frame.
+* **Auto-Gamepad Support**: Detects physical controllers and PSG1 inputs automatically upon iframe focus.
+* **Secure Sandbox**: Runs in a protected container to prevent browser crashes during high-resource gameplay.
 
 ---
 
-## 🛠️ Installation & Setup
+## 🕹️ How to Use
+1. **Initialize**: Launch this page on your PSG1.
+2. **Focus Engine**: Tap the game screen area once. This "wakes up" the emulator and connects your physical buttons.
+3. **Load ISO**: Use the engine's internal "Load File" icon to select your `.iso`, `.bin`, or `.cue` files from your device.
+4. **Reboot**: If the frame freezes, use the pink **REBOOT ENGINE** button at the bottom to clear the cache and restart the system.
 
-Because PS1 files are significantly larger than GBA files, follow these steps carefully:
-
-1.  **File Management**: Upload your `.bin`, `.iso`, or `.exe` file to your repository. 
-    * *Note: GitHub has a 100MB limit for standard uploads. For larger games, use Git LFS or a smaller "Compressed" bin.*
-2.  **Deployment**: 
-    * Ensure your game file is on the **main** branch.
-    * Wait for the GitHub Actions deployment (the green checkmark).
-3.  **Booting**: Open the app on your PSG1 and tap the **💿 LOAD PSX DISC** button.
+## 📺 Performance Tips
+* **Memory Management**: For the best frame rates, close all other tabs in the PSG1 browser before starting.
+* **Audio Context**: If the sound is crackling, tap the reboot button—this resets the WebAudio handshake.
 
 ---
 
-## 🎮 Controls (PSG1 Mapping)
-
-| PS1 Button | Keyboard Map |
+## 🛠️ System Architecture
+| Component | Status |
 | :--- | :--- |
-| **D-Pad** | Arrow Keys |
-| **Triangle / Circle** | D / X |
-| **Cross / Square** | Z / S |
-| **L1 / R1** | W / R |
-| **L2 / R2** | E / T |
-| **Select / Start** | C / V |
+| **Core Engine** | lrusso-PSX (WASM Optimized) |
+| **Iframe Layer** | Enabled (Secure Context) |
+| **Touch-Mapping** | v5.1 Focus-Fix Integrated |
+| **BIOS** | Pre-loaded / Embedded |
 
----
-
-## ⚠️ Troubleshooting
-
-* **Black Screen/Loading**: PS1 games take longer to "Fetch" than GBA games due to size. Give the status bar at least 30-60 seconds to process the bytes.
-* **"Network Error"**: This happens if the GitHub Pages deployment isn't finished. Refresh the page and try again after 2 minutes.
-* **Double-Tap**: On the PSG1, you may need to tap the screen once to "Focus" the controls before the buttons respond.
-
----
-
-**Developed by RetsolGaming for the Play Solana handheld community.**
+**Developed for the RetSOL Gaming Hub.** [Back to Hub](https://retsolgaming.github.io/RetSOL-Hub/)
